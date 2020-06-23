@@ -9,7 +9,19 @@
         :temporary="primaryDrawer.type === 'temporary'"
         app
         overflow
-        ></v-navigation-drawer>
+        >
+            <v-list dense nav>
+                <v-list-item link :to="item.link" v-for="(item,index) in items" :key="index">
+                    <v-list-item-icon>
+                        <v-icon>{{item.icon}}</v-icon>
+                    </v-list-item-icon>
+
+                    <v-list-item-content>
+                        <v-list-item-title>{{item.title}}</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+            </v-list>
+        </v-navigation-drawer>
     </div>
 </template>
 
@@ -19,7 +31,10 @@ import {mapState} from 'vuex'
 export default {
     name:'Sidebar',
     data:()=>({
-
+        items: [
+            { title: 'Principal', icon: 'mdi-view-dashboard',link:'/'},
+            { title: 'About', icon: 'mdi-view-dashboard',link:'/about'},
+        ]
     }),
     computed:{
         ...mapState(['primaryDrawer'])
