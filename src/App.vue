@@ -5,7 +5,9 @@
     <Navbar/>
 
     <v-main>
-      <router-view/>
+      <v-container fluid>
+        <router-view/>
+      </v-container>
     </v-main>
 
     <Footer/>
@@ -17,7 +19,7 @@
   import Sidebar from '@/components/Sidebar'
   import Footer from '@/components/Footer'
 
-  import {mapActions} from 'vuex'
+  import {mapActions,mapState, mapGetters} from 'vuex'
 
   export default {
     components: {
@@ -32,6 +34,9 @@
     }),
     methods: {
       ...mapActions(['getTareas'])
+    },
+    computed: { 
+      ...mapState(['tareas'])
     },
     created() {
       this.getTareas()
