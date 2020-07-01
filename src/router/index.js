@@ -19,6 +19,11 @@ Vue.use(VueRouter)
     path: '/editar/:id',
     name: 'Editar',
     component: () => import( '../views/Editar.vue')
+  },
+  {
+    path: '/familias',
+    name: 'Familias',
+    component: () => import( '../views/Familias.vue')
   }
 ]
 

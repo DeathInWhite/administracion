@@ -34,6 +34,7 @@ export default {
         items: [
             { title: 'Principal', icon: 'mdi-view-dashboard',link:'/'},
             { title: 'About', icon: 'mdi-view-dashboard',link:'/about'},
+            { title: 'Familias', icon: 'mdi-view-dashboard',link:'/familias'},
         ]
     }),
     computed:{
